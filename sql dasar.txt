@@ -1,0 +1,128 @@
+Enter password: ***
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 21
+Server version: 5.5.51 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database mahasiswa;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use mahasiswa;
+Database changed
+mysql> create table mahasiswa
+    -> (nama varchar(20),
+    -> Alamat_palsu varchar(20));
+Query OK, 0 rows affected (0.16 sec)
+
+mysql> desc mahasiswa;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| nama         | varchar(20) | YES  |     | NULL    |       |
+| Alamat_palsu | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> alter table mahasiswa
+    -> add column id int(10) first;
+Query OK, 0 rows affected (0.34 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mahasiswa;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | int(10)     | YES  |     | NULL    |       |
+| nama         | varchar(20) | YES  |     | NULL    |       |
+| Alamat_palsu | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> alter table mahasiswa
+    -> change alamat_palsu alamat_jalan varchar(200);
+Query OK, 0 rows affected (0.25 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mahasiswa;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| id           | int(10)      | YES  |     | NULL    |       |
+| nama         | varchar(20)  | YES  |     | NULL    |       |
+| alamat_jalan | varchar(200) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> alter table mahasiswa
+    -> modify alamat_jalan char;
+Query OK, 0 rows affected (0.29 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mahasiswa;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | int(10)     | YES  |     | NULL    |       |
+| nama         | varchar(20) | YES  |     | NULL    |       |
+| alamat_jalan | char(1)     | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> alter table mahasiswa drop alamat_jalan;
+Query OK, 0 rows affected (0.33 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mahasiswa;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(10)     | YES  |     | NULL    |       |
+| nama  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> alter table mahasiswa
+    -> add primary key (id);
+Query OK, 0 rows affected (0.35 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mahasiswa;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(10)     | NO   | PRI | 0       |       |
+| nama  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> alter table mahasiswa
+    -> drop primary key;
+Query OK, 0 rows affected (0.25 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mahasiswa;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(10)     | NO   |     | 0       |       |
+| nama  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
